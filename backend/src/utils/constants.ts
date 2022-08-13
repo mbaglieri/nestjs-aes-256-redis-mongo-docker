@@ -1,0 +1,2 @@
+export const etherFirstTx = 'https://api.etherscan.io/api?module=account&action=txlist&startblock=0&endblock=99999999&page=1&offset=1&sort=asc&apikey=NSZCD6S4TKVWRS13PMQFMVTNP6H7NAGHUY&address=';
+export const secret = 'sew9939pwpppwpeokdffjfjriru44030423-edmmfvnvdmjrp4l4k';

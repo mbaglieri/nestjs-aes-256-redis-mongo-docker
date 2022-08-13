@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "f4215d2c-5282-4c7f-8c80-e0d2bfa918f2",
+		"name": "react-nestjs-docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "192314"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"matias@doors.digital\", \"passwd\":\"test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/account/signin",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"matias@doors.digital\", \"passwd\":\"test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/account/signup",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/account/me",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/merchant",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchant"
+					]
+				},
+				"description": "/api/admin/hai_question/\n\nbmax_question.message  = \nbmax_question.title    = "
+			},
+			"response": []
+		},
+		{
+			"name": "add_merchant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"test\",\"street\":\"test test test\",\"description\":\"test\",\"phone\":\"12312312321\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/merchant",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchant"
+					]
+				},
+				"description": "/api/admin/hai_question/\n\nbmax_question.message  = \nbmax_question.title    = "
+			},
+			"response": []
+		},
+		{
+			"name": "public_merchant",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v1/public/merchant?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY4MTAzNDNkYzRlZGVkZGIyZjRkZmQiLCJ1c2VyX2lkIjoiNjJmN2YxNTM4ZjA4NTk5ODEwOGEwZWIzIiwiaWF0IjoxNjYwNDI0MjQ0LCJleHAiOjE2NjA0MzE0NDR9.VOJ9xm05gXDtcIhHuMIuLZZ1xscFyoAmGZXr9m0pwxU",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"public",
+						"merchant"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY4MTAzNDNkYzRlZGVkZGIyZjRkZmQiLCJ1c2VyX2lkIjoiNjJmN2YxNTM4ZjA4NTk5ODEwOGEwZWIzIiwiaWF0IjoxNjYwNDI0MjQ0LCJleHAiOjE2NjA0MzE0NDR9.VOJ9xm05gXDtcIhHuMIuLZZ1xscFyoAmGZXr9m0pwxU"
+						}
+					]
+				},
+				"description": "/api/admin/hai_question/\n\nbmax_question.message  = \nbmax_question.title    = "
+			},
+			"response": []
+		},
+		{
+			"name": "encrypt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY4MTAzNDNkYzRlZGVkZGIyZjRkZmQiLCJ1c2VyX2lkIjoiNjJmN2YxNTM4ZjA4NTk5ODEwOGEwZWIzIiwiaWF0IjoxNjYwNDI0MjQ0LCJleHAiOjE2NjA0MzE0NDR9.VOJ9xm05gXDtcIhHuMIuLZZ1xscFyoAmGZXr9m0pwxU\",\"enc_key\":\"defd754c864b78673eea38f610b596a88cabd287d92a96a6b81eec2419415be7\",\"enc_iv\":\"1b390fc152dd18c5c096517cd7bb2a2e\",\"name\":\"test\",\"address\":\"test\",\"card\":123123123123123,\"pin\":123,\"exp\":\"12/23\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/public/merchant",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"public",
+						"merchant"
+					]
+				},
+				"description": "/api/admin/hai_question/\n\nbmax_question.message  = \nbmax_question.title    = "
+			},
+			"response": []
+		},
+		{
+			"name": "add_tx",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmY4MTAzNDNkYzRlZGVkZGIyZjRkZmQiLCJ1c2VyX2lkIjoiNjJmN2YxNTM4ZjA4NTk5ODEwOGEwZWIzIiwiaWF0IjoxNjYwNDI0MjQ0LCJleHAiOjE2NjA0MzE0NDR9.VOJ9xm05gXDtcIhHuMIuLZZ1xscFyoAmGZXr9m0pwxU\",\"enc_key\":\"defd754c864b78673eea38f610b596a88cabd287d92a96a6b81eec2419415be7\",\"enc_iv\":\"1b390fc152dd18c5c096517cd7bb2a2e\",\"payload\":\"bd082024b132e24a7f4ff9b56b6948bd21bb61c3eca3b0171725e18f18cc09eb22428af2bd25e23edd84b7ff5345512413b400d68a31c04704e216d21ab777f348977bef83572582f1855f4db169aaa0d217a4dc413e53f9b6aa1859c20ca15830ebbfd041cc2631c092e3ea331779ad46c2d004d0e1cfe3155591bc213cc6eb098904ba62ee1dd2796a26fd4ea088c0b679eb2dfa459b95d96dcc7e5568398bfe1ea10e93eefdd59a155c38a70f43c906d272d0b5ff85ad22879195deea2cbd4f0a9ddda12092f45d27ccf6d1f47458de354163b83d8eff8b9910027a749fdf47ef894c5d49be901da08a85cead19dabad307300ab006f57b140c82c2afd38164bcc5aa88e9dd000466e5f1f66495e2c9ae8807458930e5483364dd5215fa231fa79c983644a3526f7b32634957b1cd7e71ad8397a7f1ca88b7d903d7b5c9186c5cc073fbf8ba8230c074a2a29f56555af3d516b9c0df69368554a5bf7d70fc81fba876bccd458dfc2443277509b987f31d2b6b8b819243d0ed5ba4bb8fc84fac4c8d1f7b19ecd23db86130c51f1e5d3d60ed56ca6081d739901409fcc805092045faeabfec0be5184f18001ac7ab21c48001c512538ae9b89ef349f28c2931\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/public/merchant/tx",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"public",
+						"merchant",
+						"tx"
+					]
+				},
+				"description": "/api/admin/hai_question/\n\nbmax_question.message  = \nbmax_question.title    = "
+			},
+			"response": []
+		}
+	]
+}

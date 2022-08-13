@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  mongo:
+    image:  mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    networks:
+      - shared-network
+    restart: always
+    volumes:
+      - ./data:/data/db
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning 
+    volumes: 
+      - cache:/data
+    networks:
+      - shared-network
+
+  api-prod:
+    container_name: nestjs_api_prod
+    image: nestjs-api-prod:1.0.0
+    build:
+      context: backend
+      target: production
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
+      - cache
+    networks:
+      - shared-network
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "http://api-prod:8000"]
+      interval: 5s
+      timeout: 3s
+      retries: 6
+
+networks:
+  shared-network:
+
+volumes:
+  mongo_data:
+  cache:
+    driver: local
